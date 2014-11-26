@@ -1,0 +1,154 @@
+/*****************************************
+basic perspective setup
+*****************************************/
+body{
+    background-color:lightgray;
+    /*perspective*/
+    -webkit-perspective:1800px;
+       -moz-perspective:1800px;
+        -ms-perspective:1800px;
+         -o-perspective:1800px;
+            perspective:1800px;
+    /*perspective-origin*/
+    -webkit-perspective-origin:bottom;
+       -moz-perspective-origin:50% 100%;
+        -ms-perspective-origin:bottom;
+         -o-perspective-origin:bottom;
+            perspective-origin:50% 100%;
+}
+
+#book{
+    
+    /*transform*/
+    -webkit-transform:rotateX(10deg);
+       -moz-transform:rotateX(10deg);
+        -ms-transform:rotateX(10deg);
+         -o-transform:rotateX(10deg);
+            transform:rotateX(10deg);
+    /*transform-style*/
+    -webkit-transform-style:preserve-3d;
+       -moz-transform-style:preserve-3d;
+        -ms-transform-style:preserve-3d;
+         -o-transform-style:preserve-3d;
+            transform-style:preserve-3d;
+}
+
+/*****************************************
+page navigation 
+*****************************************/
+
+#nav{
+    position: relative;
+    top:-70px;
+    width:100%;
+    height:40px;
+    font-family: "Indie Flower", cursive;
+    font-size:2em;
+    font-weight:800;
+    text-align:center;
+    
+}
+#nav span{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius:100%;
+    padding:5px;
+    line-height: 35px;
+}
+#nav span:hover{
+    cursor: pointer;
+}
+#left_arrow{
+    left:135px;
+}
+#right_arrow{
+    right:135px;
+}
+
+/*****************************************
+page stack layout - original position
+*****************************************/
+/*select anything with 'page' in the class name, but here same as '.page' */
+div[class*="page"],.first, .last{
+    position:absolute;
+    top:8px;
+    height:634px;
+    width:540px;
+    font-size:1em;
+    font-weight:bold;
+    background-color:#ab966e;
+    opacity:1;
+    text-align:center;
+    z-index: 1;
+    border:2px solid #9A8763;
+}
+
+.front, .back{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    right:0;
+    /*backface-visibility*/
+    -webkit-backface-visibility:hidden;
+       -moz-backface-visibility:hidden;
+        -ms-backface-visibility:hidden;
+         -o-backface-visibility:hidden;
+            backface-visibility:hidden;
+}
+.first{
+    left:10px;
+    -webkit-transform: rotateY(-180deg);
+       -moz-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+         -o-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+ }
+.right, .last{
+right:10px;
+}
+.back{
+    /* add "translateZ(1px)" to prevent the page from flickering when turning over (together w/ .front-rule)
+    from ://forum.jquery.com/topic/raise-z-index */
+    /*transform*/
+    -webkit-transform:rotateY(-180deg) translateZ(1px);
+       -moz-transform:rotateY(-180deg) translateZ(1px);
+        -ms-transform:rotateY(-180deg) translateZ(1px);
+         -o-transform:rotateY(-180deg) translateZ(1px);
+            transform:rotateY(-180deg) translateZ(1px);
+    background-color:#c9be7e;
+}
+.front{
+    /* add "translateZ(1px)" to prevent the page from flickering when turning over (together w/ .back-rule)*/
+    /*transform*/
+    -webkit-transform:translateZ(1px);
+       -moz-transform:translateZ(1px);
+        -ms-transform:translateZ(1px);
+         -o-transform:translateZ(1px);
+            transform:translateZ(1px);
+    background-color:#c9be7e;
+}
+
+/*.turned{
+    z-index: 1;
+}*/
+/*****************************************
+page turn
+*****************************************/
+
+.page, .front, .back, .turned{
+    /*defines the general "style" for transform transitions for #page1, #page2 */
+    -webkit-transition:-webkit-transform 1s ease-in-out;
+       -moz-transition:   -moz-transform 1s ease-in-out;
+         -o-transition:     -o-transform 1s ease-in-out;
+            transition:        transform 1s ease-in-out;
+    /*!important to inherit the perspective from body */
+    /*transform-style*/
+    -webkit-transform-style:preserve-3d;
+       -moz-transform-style:preserve-3d;
+        -ms-transform-style:preserve-3d;
+         -o-transform-style:preserve-3d;
+            transform-style:preserve-3d;
+}
+
