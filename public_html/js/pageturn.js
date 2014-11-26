@@ -103,51 +103,52 @@ function turnLeftPage(callback) {
 }
 
 
-//find page (w/ Id) where dropdown selection is located
+//find page (w/ ID) where dropdown selection is located
 $("#places").on("change", function () {
     var selection = $("select option:selected").text();
-
-    switch (selection) {
-        case '4 Cebu':
-            var $page = $("#p4");
-            break;
-        case '8 Siem Reap':
-            var $page = $("#p8");
-            break;
-        case '2 Sri Lanka':
-            var $page = $("#p2");
-            break;
-        case '10 Vietnam':
-            var $page = $("#p10");
-            break;
-        case '12 Yangshuo':
-            var $page = $("#p12");
-            break;
-        case '11 Shanghai':
-            var $page = $("#p11");
-            break;
-        case '9 Singapore':
-            var $page = $("#p9");
-            break;
-        case '7 KL':
-            var $page = $("#p7");
-            break;
-        case '5 Hong Kong':
-            var $page = $("#p5");
-            break;
-        case '3 Wuyi Shan':
-            var $page = $("#p3");
-            break;
-        case '1 Bali':
-            var $page = $("#p1");
-            break;
-        case '6 Koh Chang':
-            var $page = $("#p6");
-            break;
-        default:
-            var $page = $("#p1");
-    }
-
+    
+    if ( selection != "Where to go..."){
+        switch (selection) {
+            case '4 Cebu':
+                var $page = $("#p4");
+                break;
+            case '8 Siem Reap':
+                var $page = $("#p8");
+                break;
+            case '2 Sri Lanka':
+                var $page = $("#p2");
+                break;
+            case '10 Vietnam':
+                var $page = $("#p10");
+                break;
+            case '12 Yangshuo':
+                var $page = $("#p12");
+                break;
+            case '11 Shanghai':
+                var $page = $("#p11");
+                break;
+            case '9 Singapore':
+                var $page = $("#p9");
+                break;
+            case '7 KL':
+                var $page = $("#p7");
+                break;
+            case '5 Hong Kong':
+                var $page = $("#p5");
+                break;
+            case '3 Wuyi Shan':
+                var $page = $("#p3");
+                break;
+            case '1 Bali':
+                var $page = $("#p1");
+                break;
+            case '6 Koh Chang':
+                var $page = $("#p6");
+                break;
+            default:
+                var $page = $("#p1");
+        } // end switch
+    }   // end if
     //cache currently open left page
     var $currentPage = $(".turned .back");
     var currentPageId = $currentPage.attr("id");
