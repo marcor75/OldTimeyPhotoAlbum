@@ -11,14 +11,13 @@ body{
             perspective:1800px;
     /*perspective-origin*/
     -webkit-perspective-origin:bottom;
-       -moz-perspective-origin:50% 100%;
+       -moz-perspective-origin:bottom;
         -ms-perspective-origin:bottom;
          -o-perspective-origin:bottom;
-            perspective-origin:50% 100%;
+            perspective-origin:bottom;
 }
 
 #book{
-    
     /*transform*/
     -webkit-transform:rotateX(10deg);
        -moz-transform:rotateX(10deg);

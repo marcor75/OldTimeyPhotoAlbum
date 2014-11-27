@@ -41,7 +41,6 @@ body{
 header {
     height: 1px; /* makes the header element take up minimal space, but still centers and fixes the h1 element */
     text-align: center;
-    
 }
 
 h1{
@@ -52,10 +51,10 @@ h1{
     position: fixed; 
     top:20px;
     left:10px;
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-4deg);
-    -ms-transform: rotate(-4deg);
-    -o-transform: rotate(-4deg);
+    -webkit-transform: rotateX(-10deg);
+    //-moz-transform: rotateX(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
     transform: rotate(-10deg);
  }
 
