@@ -18,7 +18,7 @@ ul{
 }
 
 /*****************************************
-clearfix handcrafted by MR - not in use
+clearfix - not in use
 ****************************************
 
 .clearfix::after {
@@ -51,8 +51,7 @@ h1{
     position: fixed; 
     top:20px;
     left:10px;
-    -webkit-transform: rotateX(-10deg);
-    //-moz-transform: rotateX(-10deg);
+    -webkit-transform: rotate(-10deg);
     -ms-transform: rotate(-10deg);
     -o-transform: rotate(-10deg);
     transform: rotate(-10deg);
