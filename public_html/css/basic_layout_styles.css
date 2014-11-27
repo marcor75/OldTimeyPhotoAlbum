@@ -34,7 +34,7 @@ body{
     height: 100%;
     width:100%;
     font-family:cursive;
-    background: #8B4513 url(../img/tileable_wood_texture.dark.png) repeat;
+    background: #8B4513 url(../img/tileable_wood_texture.dark.png) repeat; /* Background pattern from subtlepatterns.com */
     background-attachment: fixed;
 }
 
