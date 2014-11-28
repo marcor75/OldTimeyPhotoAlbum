@@ -25,9 +25,10 @@ var navArrowsFirstLast = function() {
 };
 
 //on PAGE CLICK-navigation. Is it possible to disable for firefox?? (updt.:seems to work now)
-$(".page").click(function () {
+//$(".page").click(function () {  -->changed to delegate method below
+$(".page").delegate("div", "click", function(){    
     // check if page has been turned over
-    if ($(this).hasClass("turned")) {
+    if ($(this).parent(".page").hasClass("turned")) {
         // turn page back to original position
         turnLeftPage();
         navArrowsFirstLast ();
