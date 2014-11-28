@@ -123,7 +123,7 @@ footer {
 }
 
 .page a{
-    display:inline;
+    display:none;
     text-decoration: none;
     color: inherit;
     width: 150px;
@@ -140,14 +140,9 @@ footer {
     display: none;
 }
 
-.turned img, .open img, 
-.turned a, .open a{
-    display: inline;
-  
-}
-
 /* thumbnail captions */
 .page span{
+   display:none;
    position:absolute;
    z-index: -1; 
  }
@@ -247,36 +242,3 @@ footer {
     right:60px;
     bottom: 50px; 
 }
-
-.thumb1, .thumb7{
-    -webkit-transform: rotate(-4deg);
-    -moz-transform: rotate(-4deg);
-    -ms-transform: rotate(-4deg);
-    -o-transform: rotate(-4deg);
-    transform: rotate(-4deg);
-}
-
-.thumb2, .thumb8 {
-    -webkit-transform: rotate(4deg);
-    -moz-transform: rotate(4deg);
-    -ms-transform: rotate(4deg);
-    -o-transform: rotate(4deg);
-    transform: rotate(4deg);
-}
-
-.thumb4,.thumb6{
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(3deg);
-    -ms-transform: rotate(3deg);
-    -o-transform: rotate(3deg);
-    transform: rotate(-3deg);
-}
-.thumb3,.thumb5{
-    -webkit-transform: rotate(-1deg);
-    -moz-transform: rotate(-1deg);
-    -ms-transform: rotate(-1deg);
-    -o-transform: rotate(-1deg);
-    transform: rotate(-1deg);
-}                                       
-
-
