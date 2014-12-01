@@ -8,7 +8,7 @@ body{
        -moz-perspective:1800px;
         -ms-perspective:1800px;
          -o-perspective:1800px;
-            perspective:1800px;
+            perspective:1800;
     /*perspective-origin*/
     -webkit-perspective-origin:bottom;
        -moz-perspective-origin:bottom;
@@ -19,6 +19,7 @@ body{
 
 #book{
     /*transform*/
+    -ms-perspective:1800px;
     -webkit-transform:rotateX(10deg);
        -moz-transform:rotateX(10deg);
         -ms-transform:rotateX(10deg);
@@ -121,9 +122,9 @@ div[class*="page"],.first, .last{
     left:10px;
     -webkit-transform: rotateY(-180deg);
        -moz-transform: rotateY(-180deg);
-        -ms-transform: rotateY(-180deg);
+        -ms-transform: perspective(1800) rotateY(-180deg);
          -o-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
+            transform: perspective(1800) rotateY(-180deg);
  }
 .right, .last{
 right:10px;
@@ -134,9 +135,9 @@ right:10px;
     /*transform*/
     -webkit-transform:rotateY(-180deg) translateZ(1px);
        -moz-transform:rotateY(-180deg) translateZ(1px);
-        -ms-transform:rotateY(-180deg) translateZ(1px);
+        -ms-transform:perspective(1800) rotateY(-180deg) translateZ(1px);
          -o-transform:rotateY(-180deg) translateZ(1px);
-            transform:rotateY(-180deg) translateZ(1px);
+            transform:perspective(1800) rotateY(-180deg) translateZ(1px);
     background-color:#c9be7e;
 }
 .front{
@@ -144,9 +145,9 @@ right:10px;
     /*transform*/
     -webkit-transform:translateZ(1px);
        -moz-transform:translateZ(1px);
-        -ms-transform:translateZ(1px);
+        -ms-transform:perspective(1800) translateZ(1px);
          -o-transform:translateZ(1px);
-            transform:translateZ(1px);
+            transform:perspective(1800) translateZ(1px);
     background-color:#c9be7e;
 }
 
@@ -158,6 +159,7 @@ page turn
     /*defines the general "style" for transform transitions for #page1, #page2 */
     -webkit-transition:-webkit-transform 1s ease-in-out;
        -moz-transition:   -moz-transform 1s ease-in-out;
+        -ms-transition:    -ms-transform 1s ease-in-out; 
          -o-transition:     -o-transform 1s ease-in-out;
             transition:        transform 1s ease-in-out;
     /*!important to inherit the perspective from body */

@@ -40,7 +40,7 @@ $(".page").delegate("img", "click", function(event) {
         $(".current").load(function() {
             getImageOrientation();
         });
-        $("#overlay, #lightboximg, #caption, #navPrev, #navNext").css("display", "block");
+        $("#overlay, #lightboximg, #caption, #navPrev, #navNext").fadeIn(400); // looks smoother than "css("display", "block")"
     });        
 });
 

@@ -106,42 +106,78 @@ function turnLeftPage(callback) {
 $("#places").on("change", function () {
     var selection = $("select option:selected").text();
     
-    if ( selection != "Where to go..."){
+    if ( selection !== "Where to go..."){
         switch (selection) {
             case '4 Cebu':
+            case '4 Koh Tao':
+            case '4 Abstracticity7':
+            case '4 Ayutthaya':
                 var $page = $("#p4");
                 break;
             case '8 Siem Reap':
+            case '8 Abstracticity6':
+            case '8 Phnom Phen':
+            case '8 Cities':
                 var $page = $("#p8");
                 break;
             case '2 Sri Lanka':
+            case '2 Abstracticity6':
+            case '2 Abstracticity7':
+            case '2 Cities':
                 var $page = $("#p2");
                 break;
-            case '10 Vietnam':
+            case '10 Hanoi':
+            case '10 Abstracticity6':
+            case '10 Saigon':
+            case '10 Cities':
                 var $page = $("#p10");
                 break;
             case '12 Yangshuo':
+            case '12 Lijiang':
+            case '12 Hangzhou':
+            case '12 Cities':
                 var $page = $("#p12");
                 break;
             case '11 Shanghai':
+            case '11 JingAn':
+            case '11 Abstracticity3':
+            case '11 XuHui':
                 var $page = $("#p11");
                 break;
             case '9 Singapore':
+            case '9 Zoukout':
+            case '9 Abstracticity3':
+            case '9 Pulau Ubin':
                 var $page = $("#p9");
                 break;
+            case '7 Abstracticity1':
             case '7 KL':
+            case '7 Airobatics':
+            case '7 Abstracticity4':
                 var $page = $("#p7");
                 break;
             case '5 Hong Kong':
+            case '5 1.July':
+            case '5 Lantau':
+            case '5 Abstracticity4':
                 var $page = $("#p5");
                 break;
+            case '3 Abstracticity1':
             case '3 Wuyi Shan':
+            case '3 Abstracticity3':
+            case '3 Abstracticity4':
                 var $page = $("#p3");
                 break;
+            case '1 Abstracticity1':
+            case '1 Abstracticity2':
             case '1 Bali':
-                var $page = $("#p1");
-                break;
+            case '1 Abstracticity4':
+                        var $page = $("#p1");
+                        break;
             case '6 Koh Chang':
+            case '6 Abstracticity6':
+            case '6 Bangkok':
+            case '6 Cities':
                 var $page = $("#p6");
                 break;
             default:
