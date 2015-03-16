@@ -1,24 +1,27 @@
 /*****************************************
 basic perspective setup
 *****************************************/
-body{
-    background-color:lightgray;
+.main{
     /*perspective*/
     -webkit-perspective:1800px;
        -moz-perspective:1800px;
-        -ms-perspective:1800px;
          -o-perspective:1800px;
-            perspective:1800px;
+              perspective:1800;
     /*perspective-origin*/
     -webkit-perspective-origin:bottom;
        -moz-perspective-origin:bottom;
-        -ms-perspective-origin:bottom;
          -o-perspective-origin:bottom;
             perspective-origin:bottom;
+/* FOR IE */
+    -ms-perspective:1800px;
+    -ms-perspective-origin:bottom;
+     -ms-transform:rotateX(10deg);
+    -ms-transform-style:preserve-3d;
 }
-
 #book{
     /*transform*/
+    -ms-perspective:1800px;
+    -ms-perspective-origin:bottom;
     -webkit-transform:rotateX(10deg);
        -moz-transform:rotateX(10deg);
         -ms-transform:rotateX(10deg);
@@ -80,7 +83,7 @@ div[class*="page"],.first, .last{
     font-size:1em;
     font-weight:bold;
     background-color:#ab966e;
-    opacity:1;
+    //opacity:1;
     text-align:center;
     border:2px solid #9A8763;
 }
@@ -113,7 +116,7 @@ div[class*="page"],.first, .last{
     /*backface-visibility*/
     -webkit-backface-visibility:hidden;
        -moz-backface-visibility:hidden;
-        -ms-backface-visibility:hidden;
+        //-ms-backface-visibility:hidden;
          -o-backface-visibility:hidden;
             backface-visibility:hidden;
 }
@@ -121,9 +124,9 @@ div[class*="page"],.first, .last{
     left:10px;
     -webkit-transform: rotateY(-180deg);
        -moz-transform: rotateY(-180deg);
-        -ms-transform: rotateY(-180deg);
+        -ms-transform: perspective(1800) rotateY(-180deg);
          -o-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
+            transform: perspective(1800) rotateY(-180deg);
  }
 .right, .last{
 right:10px;
@@ -134,9 +137,9 @@ right:10px;
     /*transform*/
     -webkit-transform:rotateY(-180deg) translateZ(1px);
        -moz-transform:rotateY(-180deg) translateZ(1px);
-        -ms-transform:rotateY(-180deg) translateZ(1px);
+        //-ms-transform:perspective(1800) rotateY(-180deg) translateZ(1px);
          -o-transform:rotateY(-180deg) translateZ(1px);
-            transform:rotateY(-180deg) translateZ(1px);
+            transform:rotateY(-180deg) translateZ(1px) perspective(1800);
     background-color:#c9be7e;
 }
 .front{
@@ -144,9 +147,9 @@ right:10px;
     /*transform*/
     -webkit-transform:translateZ(1px);
        -moz-transform:translateZ(1px);
-        -ms-transform:translateZ(1px);
+        //-ms-transform:perspective(1800) translateZ(1px);
          -o-transform:translateZ(1px);
-            transform:translateZ(1px);
+            transform:translateZ(1px) perspective(1800);
     background-color:#c9be7e;
 }
 
@@ -158,6 +161,7 @@ page turn
     /*defines the general "style" for transform transitions for #page1, #page2 */
     -webkit-transition:-webkit-transform 1s ease-in-out;
        -moz-transition:   -moz-transform 1s ease-in-out;
+    //    -ms-transition:    -ms-transform 1s ease-in-out; 
          -o-transition:     -o-transform 1s ease-in-out;
             transition:        transform 1s ease-in-out;
     /*!important to inherit the perspective from body */
@@ -169,39 +173,48 @@ page turn
             transform-style:preserve-3d;
 }
 
-/*display images and captions on the two open pages */
+/*****************************************
+display images and captions on the two open pages
+*****************************************/
 .turned img, .open img, 
 .turned a, .open a,
 .turned span, .open span{
     display: inline;
 }
-.thumb1, .thumb7{
+.thumb1, .thumb8{
     -webkit-transform: rotate(-4deg) translateZ(2px);
     -moz-transform: rotate(-4deg) translateZ(2px);
     -ms-transform: rotate(-4deg) translateZ(2px);
     -o-transform: rotate(-4deg) translateZ(2px);
     transform: rotate(-4deg) translateZ(2px);
 }
-
-.thumb2, .thumb8 {
+.thumb7{
     -webkit-transform: rotate(4deg) translateZ(2px);
     -moz-transform: rotate(4deg) translateZ(2px);
     -ms-transform: rotate(4deg) translateZ(2px);
     -o-transform: rotate(4deg) translateZ(2px);
-    transform: rotate(4deg)translateZ(2px);
- }
-
-.thumb4,.thumb6{
-    -webkit-transform: rotate(-3deg) translateZ(2px);
-    -moz-transform: rotate(3deg) translateZ(2px);
-    -ms-transform: rotate(3deg) translateZ(2px);
-    -o-transform: rotate(3deg) translateZ(2px);
-    transform: rotate(-3deg) translateZ(2px);
+    transform: rotate(4deg) translateZ(2px);
 }
-.thumb3,.thumb5{
+
+.thumb2 {
     -webkit-transform: rotate(-1deg) translateZ(2px);
     -moz-transform: rotate(-1deg) translateZ(2px);
     -ms-transform: rotate(-1deg) translateZ(2px);
     -o-transform: rotate(-1deg) translateZ(2px);
-    transform: rotate(-1deg) translateZ(2px);
+    transform: rotate(-1deg)translateZ(2px);
+ }
+
+.thumb4,.thumb6{
+    -webkit-transform: rotate(3deg) translateZ(2px);
+    -moz-transform: rotate(3deg) translateZ(2px);
+    -ms-transform: rotate(3deg) translateZ(2px);
+    -o-transform: rotate(3deg) translateZ(2px);
+    transform: rotate(3deg) translateZ(2px);
+}
+.thumb3,.thumb5{
+    -webkit-transform: rotate(-5deg) translateZ(2px);
+    -moz-transform: rotate(-5deg) translateZ(2px);
+    -ms-transform: rotate(-5deg) translateZ(2px);
+    -o-transform: rotate(-5deg) translateZ(2px);
+    transform: rotate(-5deg) translateZ(2px);
 } 
