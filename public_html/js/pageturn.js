@@ -11,7 +11,7 @@ $("#right_arrow").on("click", function () {
     turnRightPage();
 });
 
-
+//hides navigation arrows on first/last page 
 var navArrowsFirstLast = function() {
     if($(".turned").hasClass("first")){
         $("#left_arrow").hide();
@@ -46,6 +46,14 @@ function turnRightPage(callback) {
         "transform": "rotateY(-180deg)",
         "transform-origin": "left"
     });
+    /*$page.find(".front").css({
+        "transform": "rotateY(180deg)",
+        "transform-origin": "left"
+    }); 
+    $page.find(".back").css({
+        "transform": "rotateY(0deg)",
+        "transform-origin": "left"
+    });*/
 
     var currentZindex = parseInt($page.css("z-index"));
     // set new z-index; 100 is arbitraryly chosen number to make index change easily reversible - not very 'future proof' though (e.g. if more pages added)    
@@ -108,79 +116,79 @@ $("#places").on("change", function () {
     
     if ( selection !== "Where to go..."){
         switch (selection) {
-            case '4 Cebu':
-            case '4 Koh Tao':
-            case '4 Abstracticity7':
-            case '4 Ayutthaya':
-                var $page = $("#p4");
+            case '1 Abstracticity1':
+            case '1 Ubud':
+            case '1 South':
+            case '1 Gilis':
+                var $page = $("#p1");
                 break;
+            case '2 Colombo':
+            case '2 Anarathapura':
+            case '2 Kendy':
+            case '2 Train':
+                var $page = $("#p2");
+                break;
+            case '3 Taipei':
+            case '3 AliShan':
+            case '3 SpringScream':
+            case '3 Tailuge':
+                var $page = $("#p3");
+                break;
+            case '4 Hong Kong':
+            case '4 1.July Protests':
+            case '4 Lantau':
+            case '4 Abstracticity4':
+                var $page = $("#p4");
+                break;    
+            case '5 Cebu':
+            case '5 Koh Tao':
+            case '5 Chiang Mai':
+            case '5 Ayuthaya':
+                var $page = $("#p5");
+                break;
+            case '6 Koh Chang':
+            case '6 Chiang Rai':
+            case '6 Bangkok':
+            case '6 Sukothai':
+                var $page = $("#p6");
+                break;    
+            case '7 Pulau Tioman':
+            case '7 KL':
+            case '7 Airobatics':
+            case '7 Penang':
+                var $page = $("#p7");
+                break;     
             case '8 Siem Reap':
-            case '8 Abstracticity6':
+            case '8 Sihanouville':
             case '8 Phnom Phen':
             case '8 Cities':
                 var $page = $("#p8");
                 break;
-            case '2 Sri Lanka':
-            case '2 Abstracticity6':
-            case '2 Abstracticity7':
-            case '2 Cities':
-                var $page = $("#p2");
+            case '9 Singapore':
+            case '9 Zoukout':
+            case '9 F1 Night Race':
+            case '9 Pulau Ubin':
+                var $page = $("#p9");
                 break;
             case '10 Hanoi':
-            case '10 Abstracticity6':
+            case '10 Hoi An':
             case '10 Saigon':
-            case '10 Cities':
+            case '10 NaThrang':
                 var $page = $("#p10");
                 break;
+            case '11 Shanghai':
+            case '11 JingAn':
+            case '11 Anhui':
+            case '11 XuHui':
+                var $page = $("#p11");
+                break;    
             case '12 Yangshuo':
             case '12 Lijiang':
             case '12 Hangzhou':
             case '12 Cities':
                 var $page = $("#p12");
                 break;
-            case '11 Shanghai':
-            case '11 JingAn':
-            case '11 Abstracticity3':
-            case '11 XuHui':
-                var $page = $("#p11");
-                break;
-            case '9 Singapore':
-            case '9 Zoukout':
-            case '9 Abstracticity3':
-            case '9 Pulau Ubin':
-                var $page = $("#p9");
-                break;
-            case '7 Abstracticity1':
-            case '7 KL':
-            case '7 Airobatics':
-            case '7 Abstracticity4':
-                var $page = $("#p7");
-                break;
-            case '5 Hong Kong':
-            case '5 1.July':
-            case '5 Lantau':
-            case '5 Abstracticity4':
-                var $page = $("#p5");
-                break;
-            case '3 Abstracticity1':
-            case '3 Wuyi Shan':
-            case '3 Abstracticity3':
-            case '3 Abstracticity4':
-                var $page = $("#p3");
-                break;
-            case '1 Abstracticity1':
-            case '1 Abstracticity2':
-            case '1 Bali':
-            case '1 Abstracticity4':
-                        var $page = $("#p1");
-                        break;
-            case '6 Koh Chang':
-            case '6 Abstracticity6':
-            case '6 Bangkok':
-            case '6 Cities':
-                var $page = $("#p6");
-                break;
-            default:
+           default:
                 var $page = $("#p1");
         } // end switch
     }   // end if

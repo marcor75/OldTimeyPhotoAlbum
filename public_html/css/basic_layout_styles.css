@@ -1,7 +1,8 @@
 /*  Created on : 16.10.2014, 12:17:50
     Author     : Marcosaurus */
 /*****************************************
-page reset
+page reset - minimalistic, since not a lot of html elements on page;
+usually consider normalize or reset
 *****************************************/
 
 * {
@@ -18,29 +19,18 @@ ul{
 }
 
 /*****************************************
-clearfix - not in use
-****************************************
-
-.clearfix::after {
-	content: " ";
-	display: table;
-	clear: both;
-}                                       */
-
-/*****************************************
 page styles
 *****************************************/
 body{
     height: 100%;
     width:100%;
     font-family:cursive;
-    background: #8B4513 url(../img/tileable_wood_texture.dark.png) repeat; /* Background pattern from subtlepatterns.com */
+    background: saddlebrown url(../img/tileable_wood_texture.dark.png) repeat; /* Background pattern from subtlepatterns.com */
     background-attachment: fixed;
 }
 
 header {
     height: 1px; /* makes the header element take up minimal space, but still centers and fixes the h1 element */
-    /*text-align: center;*/
 }
 
 h1{
@@ -51,12 +41,37 @@ h1{
     position: fixed; 
     top:20px;
     left:10px;
-    -webkit-transform: rotate(-10deg);
-    -ms-transform: rotate(-10deg);
-    -o-transform: rotate(-10deg);
-    transform: rotate(-10deg);
+    -webkit-transform: rotate(-7deg);
+    -ms-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+    transform: rotate(-7deg);
  }
-
+ h1:hover{
+     cursor:pointer;
+ }
+ 
+ h1:hover~#disclText{
+         display: block;
+ }
+     
+ #disclaimer{
+     text-shadow: 0 0 10px lightgoldenrodyellow;   
+ }
+ #disclText{
+     position: absolute;
+     top: 115px;
+     left: 140px;
+     width: 80%;
+     height: 600px;
+     border-radius: 30px;
+     padding: 3% 3%;
+     background-color: lightgoldenrodyellow;
+     color:#333;
+     font-size: 1.2em;
+     z-index: 100;
+     display:none;
+ }
+  
 .main{
     position: relative;
     width: 100%;
@@ -97,42 +112,27 @@ footer {
 /*bookmark */
 .book::before{
     position: absolute;
-    content: url(../img/Einmerkal.klein.png); 
+    content: url(../img/Einmerkerl.klein.png); 
     top: -35px;
     right: 210px;
     z-index: -1; 
     transform: rotate(-2deg);
 }
-/*div container is to cover the default select arrow in FF+IE*/
-#select-container{
-    width: 170px;
-    height: 40px;
-    padding:0;
-    border:none;
-    overflow: hidden;
-    position:absolute;
-    top: -35px;
-    right: 240px;
-    line-height: 40px;
-    background: transparent;
-    font-family: "Indie Flower", cursive;
-    font-size:1em;
-    font-weight:bold;
-    transform: rotate(-3deg);
-}
+
 optgroup{
     -webkit-appearance: none;
     font-family: "Indie Flower", cursive;
     font-weight:300;
  }
 #places{
+    position:absolute;
+    top: -35px;
+    right: 220px;
     width: 190px;
     height: 50px;
-    /*line-height: 50px;*/
     border:none;
     outline:none; /* removes focus ring from Webkit */
     padding-left:5px; 
-    //margin:0;
     background: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -147,6 +147,9 @@ optgroup{
     font-family: "Indie Flower", cursive;
     font-size:1em;
     font-weight:bold;
+}
+#places:hover{
+    cursor: pointer;
 }
 
 .page a{
@@ -163,7 +166,7 @@ optgroup{
 .page img{
     width: 150px;
     height: 200px;
-    border: 10px solid white;
+    border: 7px solid white;
     display: none;
 }
 
@@ -176,7 +179,7 @@ optgroup{
 
 .thumb1 {
     left:55px;
-    top: 50px;   
+    top: 53px;   
 }   
 .thumb1_capt{
     width:150px;
@@ -188,7 +191,7 @@ optgroup{
 
 .thumb2 {
     left: 295px;
-    top: 50px;   
+    top: 52px;   
 }  
 .thumb2_capt{
     width:150px;
@@ -236,7 +239,7 @@ optgroup{
 
 .thumb6 {
     right: 60px;
-    top: 50px;   
+    top: 55px;   
 }  
 .thumb6_capt{
     width:150px;
@@ -248,7 +251,7 @@ optgroup{
 
 .thumb7 {
     right: 315px;
-    bottom: 60px;    
+    bottom: 65px;    
 }  
 .thumb7_capt{
     width:150px;
