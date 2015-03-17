@@ -1,9 +1,14 @@
-oldtimey-photobook
-==================
+Old-Timey Photo Album is an Experiment to create a pre-digital era photo album using CSS3 transforms and JS/jQuery, without the use of any plug-ins.
 
-collection of photo galleries, organized in a sort of pre-digicam era photo album.
-
-Trying to build this photo gallery that looks like sort of a old photo album from the times before digital photography. User can either flip through the pages manually or jump to a specific page using the 'bookmark'-dropdown selector. Each page contains four thumbnails that, when clicked, load the respective photo gallery from a separate html file into a 'lightbox'. So far only the thumbnails 'Abstracticity1' on page 1 and 'Cities' on page 2 are linked to the related galleries. 
-
-It works fine in Chrome 38, but in Firefox 33.1.1 the thumbnails are not clickable - or turn the page instead of opening the respective gallery. And I haven't even dared to look at IE yet!
-
+The album should have a page turn effect, a bookmark to flip to a selected page and clicking on a photo should open 
+a 'lightbox' with a gallery of related images. 
+           
+PLEASE NOTE:
+So far only the first photo on page 1 ("Abstracticity 1") and the last photo on page 2 ("Train") open related galleries.
+The load-method for the other photos is not fully implemented yet.
+                
+Old-Timey Photo Album is best viewed in Chrome or Opera. In Firefox transforms are not smooth for some reason.
+Does not work in IE. Not tested in Safari. 
+                
+Background is by courtesy of http://subtlepatterns.com
+Images are courtesy of http://lorempixel.com 
