@@ -25,7 +25,7 @@ body{
     height: 100%;
     width:100%;
     font-family:cursive;
-    background: saddlebrown url(../img/tileable_wood_texture.dark.png) repeat; /* Background pattern from subtlepatterns.com */
+    background: tan url(../img/tileable_wood_texture.dark.png) repeat; /* Background pattern from subtlepatterns.com */
     background-attachment: fixed;
 }
 
