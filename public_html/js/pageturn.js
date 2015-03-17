@@ -3,12 +3,23 @@ $(document).ready(function(){
 });
 
 //NAVIGATION ARROWS 
-$("#left_arrow").on("click", function () {
-    turnLeftPage();
-});
-
-$("#right_arrow").on("click", function () {
-    turnRightPage();
+// add / remove class "running" to temporarily disable click event handler, thus preventing 
+// accidental double-clicks, that were previously messing up stack order of pages
+$("#nav").on("click", "span:not(.running)", function () {
+    // testcode console.log($(this));
+   $(this).addClass("running");
+   if ($(this).attr("id")== "left_arrow"){
+       turnLeftPage();
+       setTimeout(function () {
+           // testcode console.log($(this)); 
+            $("#left_arrow").removeClass("running");}, 1100 );
+   } else {
+       turnRightPage();
+       setTimeout(function () {
+           // testcode console.log($(this));
+            $("#right_arrow").removeClass("running");}, 1100 );
+   }
+   
 });
 
 //hides navigation arrows on first/last page 
@@ -24,19 +35,20 @@ var navArrowsFirstLast = function() {
     }; 
 };
 
-//on PAGE CLICK-navigation. Not reliable in firefox; workaround w/ larger nav arrows 
-$(".page").delegate("div", "click", function(){    
+/*//on PAGE CLICK-navigation. Not reliable in firefox; workaround w/ larger nav arrows 
+ $(".page").on("click", "div", function(){    
     // check if page has been turned over
     if ($(this).parent(".page").hasClass("turned")) {
         // turn page back to original position
         turnLeftPage();
-       
+        
     // else page IS in original position on right 
     } else {
         // turn over to the left
         turnRightPage();
     };
-});
+});  
+ */
 
 // turns over right page    
 function turnRightPage(callback) {
@@ -46,15 +58,7 @@ function turnRightPage(callback) {
         "transform": "rotateY(-180deg)",
         "transform-origin": "left"
     });
-    /*$page.find(".front").css({
-        "transform": "rotateY(180deg)",
-        "transform-origin": "left"
-    }); 
-    $page.find(".back").css({
-        "transform": "rotateY(0deg)",
-        "transform-origin": "left"
-    });*/
-
+    
     var currentZindex = parseInt($page.css("z-index"));
     // set new z-index; 100 is arbitraryly chosen number to make index change easily reversible - not very 'future proof' though (e.g. if more pages added)    
     $page.css("z-index", 100 - currentZindex);

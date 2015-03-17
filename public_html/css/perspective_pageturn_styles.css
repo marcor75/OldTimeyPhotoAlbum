@@ -41,7 +41,7 @@ page navigation
 
 #nav{
     position: relative;
-    top:-335px;
+    top:-360px;
     width:100%;
     height:40px;
     font-family: "Indie Flower", cursive;
@@ -52,10 +52,10 @@ page navigation
 }
 #nav span{
     position: absolute;
-    width: 520px;
+    width: 60px;
     height: 60px;
     border-radius:100%;
-    line-height: 55px;
+    line-height: 60px;
 }
 #nav span:hover{
     cursor: pointer;
@@ -158,10 +158,10 @@ page turn
 *****************************************/
 
 .page, .front, .back, .turned{
-    /*defines the general "style" for transform transitions for #page1, #page2 */
+    /*defines the general "style" for page transform transitions */
     -webkit-transition:-webkit-transform 1s ease-in-out;
        -moz-transition:   -moz-transform 1s ease-in-out;
-    //    -ms-transition:    -ms-transform 1s ease-in-out; 
+    //    -ms-transition:  -ms-transform 1s ease-in-out; 
          -o-transition:     -o-transform 1s ease-in-out;
             transition:        transform 1s ease-in-out;
     /*!important to inherit the perspective from body */
