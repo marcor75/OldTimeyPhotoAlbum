@@ -11,13 +11,16 @@ usually consider normalize or reset
    -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box; 
     box-sizing: border-box;
- /*   border: 1px dotted red; */
 }
-
+html{
+    overflow-x: hidden;
+}
 ul{
     list-style: none;
 }
-
+a{
+    text-decoration: none;
+}
 /*****************************************
 page styles
 *****************************************/
@@ -94,6 +97,10 @@ footer {
     font-family: "Indie Flower", cursive;
     text-align: right;
     padding: 0 20px 10px 0;
+    color: black;
+}
+footer a {
+    color: black;
 }
 
 /*centering book */
@@ -121,10 +128,10 @@ footer {
 
 optgroup{
     -webkit-appearance: none;
-    font-family: "Indie Flower", cursive;
-    font-weight:300;
+    font-family: "Indie Flower", cursive; //doesn't work in Chrome for some reason
+    font-weight:bold;
  }
-#places{
+ #places{
     position:absolute;
     top: -35px;
     right: 220px;

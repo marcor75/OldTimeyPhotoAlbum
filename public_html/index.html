@@ -4,6 +4,9 @@
         <title>Old-Timey Photo Album</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8" defer></script>
+        <script src="js/lightbox.js" type="text/javascript" charset="utf-8" defer></script>
+        <script src="js/pageturn.js" type="text/javascript" charset="utf-8" defer></script>
         <link href='http://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/basic_layout_styles.css">
         <link rel="stylesheet" href="css/lightbox_styles.css">
@@ -21,14 +24,14 @@
                 <hr> <br>
             <p> PLEASE NOTE:<br>
                 <br>
-                So far only the first photo on page 1 ("Abstracticity 1") and the last photo on page 2 ("Train") open related galleries.
+                So far only the first photo on page 1 ("Abstract") and the last photo on page 2 ("Cities") open related galleries.
                 The load-method for the other photos is not fully implemented yet.<br><br>
                 
                 Old-Timey Photo Album is best viewed in Chrome or Opera. In Firefox transforms are not smooth for some reason.
                 Does not work in IE. Not tested in Safari. <br><br>
                 
                 Background is by courtesy of http://subtlepatterns.com <br>
-                Images are courtesy of http://lorempixel.com <br>
+                Placeholder images are courtesy of http://lorempixel.com <br>
             </p>
             </div>
         </header>
@@ -38,175 +41,174 @@
                     <!-- bookmark --> 
                     <select id="places" name="places">
                         <option value="Where_to_go" selected>Where to go... &raquo;</option>
-                        <optgroup label="Bali">
-                        <option value="bali">1 Abstracticity1</option>
-                        <option value="bali">1 Ubud</option>
-                        <option value="bali">1 South</option>
-                        <option value="bali">1 Gilis</option>
+                        <optgroup class="og" label="Bali">
+                        <option>1 Abstract</option>
+                        <option>1 Ubud</option>
+                        <option>1 South</option>
+                        <option>1 Gilis</option>
                         </optgroup>
                         <optgroup label="Sri Lanka">
-                        <option value="Sri_Lanka">2 Colombo</option>
-                        <option value="Sri_Lanka">2 Anarathapura</option>
-                        <option value="Sri_Lanka">2 Kendy</option>
-                        <option value="Sri_Lanka">2 Train</option>
+                        <option>2 Colombo</option>
+                        <option>2 Anarathapura</option>
+                        <option>2 Kandy</option>
+                        <option>2 Cities</option>
                         </optgroup>
                         <optgroup label="Taiwan">
-                        <option value="Wuyi_Shan">3 Taipei</option>
-                        <option value="Wuyi_Shan">3 AliShan</option>
-                        <option value="Wuyi_Shan">3 SpringScream</option>
-                        <option value="Wuyi_Shan">3 Tailuge</option>
+                        <option>3 Taipei</option>
+                        <option>3 AliShan</option>
+                        <option>3 SpringScream</option>
+                        <option>3 Tailuge</option>
                         </optgroup>
                         <optgroup label="Hong Kong">
-                        <option value="Hong_Kong">4 Hong Kong</option>
-                        <option value="Hong_Kong">4 1.July Protests</option>
-                        <option value="Hong_Kong">4 Lantau</option>
-                        <option value="Hong_Kong">4 Shek O</option>
+                        <option>4 Hong Kong</option>
+                        <option>4 1.July Protests</option>
+                        <option>4 Lantau</option>
+                        <option>4 Shek O</option>
                         </optgroup>
                         <optgroup label="Cebu / Thailand">
-                        <option value="Cebu">5 Cebu</option>
-                        <option value="Cebu">5 Koh Tao</option>
-                        <option value="Cebu">5 Chiang Mai</option>
-                        <option value="Cebu">5 Ayuthaya</option>
+                        <option>5 Cebu</option>
+                        <option>5 Koh Tao</option>
+                        <option>5 Chiang Mai</option>
+                        <option>5 Ayuthaya</option>
                         </optgroup>
                         <optgroup label="Thailand">
-                        <option value="Koh_Chang">6 Koh Chang</option>
-                        <option value="Koh_Chang">6 Chiang Rai</option>
-                        <option value="Koh_Chang">6 Bangkok</option>
-                        <option value="Koh_Chang">6 Sukothai</option>
+                        <option>6 Koh Chang</option>
+                        <option>6 Chiang Rai</option>
+                        <option>6 Bangkok</option>
+                        <option>6 Sukothai</option>
                         </optgroup>
                         <optgroup label="Malaysia">
-                        <option value="KL">7 Pulau Tioman</option>
-                        <option value="KL">7 KL</option>
-                        <option value="KL">7 Airobatics</option>
-                        <option value="KL">7 Penang</option>
+                        <option>7 Pulau Tioman</option>
+                        <option>7 KL</option>
+                        <option>7 Airobatics</option>
+                        <option>7 Penang</option>
                         </optgroup>
                         <optgroup label="Cambodia">
-                        <option value="Siem_Reap">8 Siem Reap</option>
-                        <option value="Siem_Reap">8 Sihanouville</option>
-                        <option value="Siem_Reap">8 Phnom Phen</option>
-                        <option value="Siem_Reap">8 Cities</option>
+                        <option>8 Siem Reap</option>
+                        <option>8 Sihanouville</option>
+                        <option>8 Phnom Phen</option>
+                        <option>8 Cities</option>
                         </optgroup>
                         <optgroup label="Singapore">
-                        <option value="Singapore">9 Singapore</option>
-                        <option value="Singapore">9 Zoukout</option>
-                        <option value="Singapore">9 F1 Night Race</option>
-                        <option value="Singapore">9 Pulau Ubin</option>
+                        <option>9 Singapore</option>
+                        <option>9 Zoukout</option>
+                        <option>9 F1 Night Race</option>
+                        <option>9 Pulau Ubin</option>
                         </optgroup>
                         <optgroup label="Vietnam">
-                        <option value="Vietnam">10 Hanoi</option>
-                        <option value="Vietnam">10 Hoi An</option>
-                        <option value="Vietnam">10 Saigon</option>
-                        <option value="Vietnam">10 NaThrang</option>
+                        <option>10 Hanoi</option>
+                        <option>10 Hoi An</option>
+                        <option>10 Saigon</option>
+                        <option>10 NaThrang</option>
                         </optgroup>
                         <optgroup label="Shanghai">
-                        <option value="Shanghai">11 Shanghai</option>
-                        <option value="Shanghai">11 JingAn</option>
-                        <option value="Shanghai">11 Anhui</option>
-                        <option value="Shanghai">11 XuHui</option>
+                        <option>11 Shanghai</option>
+                        <option>11 JingAn</option>
+                        <option>11 Anhui</option>
+                        <option>11 XuHui</option>
                         </optgroup>
                         <optgroup label="China">
-                        <option value="Yangshuo">12 Yangshuo</option>
-                        <option value="Yangshuo">12 Lijiang</option>
-                        <option value="Yangshuo">12 Hangzhou</option>
-                        <option value="Yangshuo">12 Wuyishan</option>
+                        <option>12 Yangshuo</option>
+                        <option>12 Lijiang</option>
+                        <option>12 Hangzhou</option>
+                        <option>12 Wuyishan</option>
                         </optgroup>
                     </select>
               
                     <!-- pages sorted in reverse order so last page is at bottom of stack -->       
                     <div class="page right last">
                         <div id="p12" class="front">12 <span>Yangshuo</span>
-                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb5_capt">Yangshuo</span> 
-                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb6_capt">Lijiang</span> 
-                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb7_capt">Hangzhou</span> 
-                            <a class="thumb8" href="#"><img id="cities12" src="img/image6.jpg" alt="Cities"/></a><span class="thumb8_capt">Cities</span>
+                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Yangshuo</span> 
+                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Lijiang</span> 
+                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Hangzhou</span> 
+                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">Wuyishan</span>
                         </div>
                     </div>    
                     <div id="right5" class="page right">
                         <div id="p11" class="back">11 <span>Shanghai</span>
-                            <a class="thumb1" href="#"><img id="abstract11"  src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Shanghai</span>
-                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb2_capt">Shanghai-JingAn</span>
-                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb3_capt">Anhui</span>
-                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb4_capt">Shanghai-XuHui</span>
+                            <a class="thumb1" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb1_capt">Shanghai</span>
+                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb2_capt">Shanghai-JingAn</span>
+                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb3_capt">Anhui</span>
+                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb4_capt">Shanghai-XuHui</span>
                         </div>
                         <div id="p10" class="front">10 <span>Vietnam</span>
-                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb5_capt">Hanoi</span> 
-                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb6_capt">Hoi An</span> 
-                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb7_capt">Saigon</span> 
-                            <a class="thumb8" href="#"><img id="cities10" src="img/image6.jpg" alt="Cities"/></a><span class="thumb8_capt">NaThrang</span>
+                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Hanoi</span> 
+                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Hoi An</span> 
+                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Saigon</span> 
+                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">NaThrang</span>
                         </div>
                     </div>
                     <div id="right4" class="page right">
                         <div id="p9" class="back">9 <span>Singapore</span>
-                            <a class="thumb1" href="#"><img id="abstract9"  src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Singapore</span>
-                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb2_capt">Singapore-Zoukout</span>
-                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb3_capt">F1 Night Race</span>
-                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb4_capt">Singapore-Pulau Ubin</span>
+                            <a class="thumb1" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb1_capt">Singapore</span>
+                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb2_capt">Singapore-Zoukout</span>
+                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb3_capt">F1 Night Race</span>
+                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb4_capt">Singapore-Pulau Ubin</span>
                         </div>
                         <div id="p8" class="front">8 <span>Siem Reap</span>
-                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb5_capt">Siem Reap</span> 
-                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb6_capt">Sihanouville</span> 
-                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb7_capt">Phnom Phen</span> 
-                            <a class="thumb8" href="#"><img id="cities8" src="img/image6.jpg" alt="Cities"/></a><span class="thumb8_capt">Cities</span>
+                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Siem Reap</span> 
+                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Sihanouville</span> 
+                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Phnom Phen</span> 
+                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">Cities</span>
                         </div>
                     </div>
                     <div id="right3" class="page right">
                         <div id="p7" class="back">7 <span>Malaysia</span>
-                            <a class="thumb1" href="#"><img id="abstract7"  src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Pulau Tioman</span>
-                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb2_capt">KL</span>
-                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb3_capt">KL-Airobatics</span>
-                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb4_capt">Penang</span>
+                            <a class="thumb1" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb1_capt">Pulau Tioman</span>
+                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb2_capt">KL</span>
+                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb3_capt">KL-Airobatics</span>
+                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb4_capt">Penang</span>
                         </div>
                         <div id="p6" class="front">6 <span>Thailand</span>
-                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb5_capt">Koh Chang</span> 
-                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb6_capt">Chiang Rai</span> 
-                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb7_capt">Bangkok</span> 
-                            <a class="thumb8" href="#"><img id="cities6" src="img/image6.jpg" alt="Cities"/></a><span class="thumb8_capt">Sukothai</span>
+                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Koh Chang</span> 
+                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Chiang Rai</span> 
+                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Bangkok</span> 
+                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">Sukothai</span>
                         </div>
                     </div>
                     <div id="right2" class="page right">
                         <div id="p5" class="back">5 <span>Cebu/Thailand</span>
-                            <a class="thumb1" href="#"><img id="abstract5"  src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Cebu</span>
-                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb2_capt">Koh Tao</span>
-                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb3_capt">Chiang Mai</span>
-                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb4_capt">Ayuthaya</span>
+                            <a class="thumb1" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Cebu</span>
+                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb2_capt">Koh Tao</span>
+                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb3_capt">Chiang Mai</span>
+                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb4_capt">Ayuthaya</span>
                         </div>
                         <div id="p4" class="front">4 <span>Hong Kong</span>
-                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb5_capt">Hong Kong</span> 
-                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb6_capt">1.July Protests</span> 
-                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb7_capt">Lantau</span> 
-                            <a class="thumb8" href="#"><img id="cities4" src="img/image6.jpg" alt="Cities"/></a><span class="thumb8_capt">Abstracticity4</span>
+                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Hong Kong</span> 
+                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">1.July Protests</span> 
+                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Lantau</span> 
+                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">Shek O</span>
                         </div>
                     </div>
                     <div id="right1" class="page right open">
                         <div id="p3" class="back">3 <span>Taiwan</span>
-                            <a class="thumb1" href="#"><img id="abstract3" src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Taipei</span>
-                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb2_capt">AliShan</span>
-                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb3_capt">SpringScream</span>
-                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb4_capt">Tailuge</span>
+                            <a class="thumb1" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb1_capt">Taipei</span>
+                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb2_capt">AliShan</span>
+                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb3_capt">SpringScream</span>
+                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb4_capt">Tailuge</span>
                         </div>
                         <div id="p2" class="front">2 <span>Sri Lanka</span>
-                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb5_capt">Colombo</span> 
-                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb6_capt">Anarathapura</span> 
-                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb7_capt">Kendy</span> 
-                            <a class="thumb8" href="#"><img id="cities" src="img/image6.jpg" alt="Cities"/></a><span class="thumb8_capt">Train</span> 
+                            <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Colombo</span> 
+                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Anarathapura</span> 
+                            <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Kandy</span> 
+                            <a class="thumb8" href="#"><img id="cities" src="img/image6.jpg" alt="Cities"/></a><span class="thumb8_capt">Cities</span> 
                         </div>
                     </div>
                     <div class="page first turned">
                         <div id="p1" class="back">1 <span>Bali</span>
-                            <a class="thumb1" href="#"><img id="abstract"  src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Abstracticity1</span>
-                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb2_capt">Ubud</span>
-                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb3_capt">South</span>
-                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb4_capt">Gilis</span>
+                            <a class="thumb1" href="#"><img id="abstract" src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Abstract</span>
+                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb2_capt">Ubud</span>
+                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb3_capt">South</span>
+                            <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb4_capt">Gilis</span>
                         </div>
                     </div>
                 </div> <!--end book container -->
                     <!-- navigation arrows -->
                     <div id="nav"><span id="left_arrow">&laquo;</span><span id="right_arrow">&raquo;</span>
                     </div>  <!-- end navigation arrows -->
-                        
         </div> <!-- end of main div -->
         
-        <footer><h3>&copy; Marco Renzi 2014</h3></footer>    
+        <footer><h3>&copy;<a href="mailto:marcor@eclipso.me"> Marco Renzi</a> 2014</h3></footer>    
         
         <!--Lightbox elements -->
         <div id="overlay">
@@ -218,9 +220,5 @@
             </div>
             <div id="closeBtn">x</div>  
         </div> 
-         
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/lightbox.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/pageturn.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>

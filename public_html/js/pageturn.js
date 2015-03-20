@@ -41,7 +41,6 @@ var navArrowsFirstLast = function() {
     if ($(this).parent(".page").hasClass("turned")) {
         // turn page back to original position
         turnLeftPage();
-        
     // else page IS in original position on right 
     } else {
         // turn over to the left
@@ -120,7 +119,7 @@ $("#places").on("change", function () {
     
     if ( selection !== "Where to go..."){
         switch (selection) {
-            case '1 Abstracticity1':
+            case '1 Abstract':
             case '1 Ubud':
             case '1 South':
             case '1 Gilis':
@@ -128,8 +127,8 @@ $("#places").on("change", function () {
                 break;
             case '2 Colombo':
             case '2 Anarathapura':
-            case '2 Kendy':
-            case '2 Train':
+            case '2 Kandy':
+            case '2 Cities':
                 var $page = $("#p2");
                 break;
             case '3 Taipei':
@@ -141,7 +140,7 @@ $("#places").on("change", function () {
             case '4 Hong Kong':
             case '4 1.July Protests':
             case '4 Lantau':
-            case '4 Abstracticity4':
+            case '4 Shek O':
                 var $page = $("#p4");
                 break;    
             case '5 Cebu':
@@ -189,7 +188,7 @@ $("#places").on("change", function () {
             case '12 Yangshuo':
             case '12 Lijiang':
             case '12 Hangzhou':
-            case '12 Cities':
+            case '12 Wuyishan':
                 var $page = $("#p12");
                 break;
            default:

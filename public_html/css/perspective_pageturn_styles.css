@@ -132,8 +132,8 @@ div[class*="page"],.first, .last{
 right:10px;
 }
 .back{
-    /* add "translateZ(1px)" to prevent the page from flickering when turning over (together w/ .front-rule)
-    from ://forum.jquery.com/topic/raise-z-index */
+/* add "translateZ(1px)" to prevent the page from flickering when turning over (together w/ .front-rule)
+from ://forum.jquery.com/topic/raise-z-index */
     /*transform*/
     -webkit-transform:rotateY(-180deg) translateZ(1px);
        -moz-transform:rotateY(-180deg) translateZ(1px);
@@ -143,8 +143,8 @@ right:10px;
     background-color:#c9be7e;
 }
 .front{
-    /* add "translateZ(1px)" to prevent the page from flickering when turning over (together w/ .back-rule)*/
-    /*transform*/
+/* add "translateZ(1px)" to prevent the page from flickering when turning over (together w/ .back-rule)*/
+/*transform*/
     -webkit-transform:translateZ(1px);
        -moz-transform:translateZ(1px);
         //-ms-transform:perspective(1800) translateZ(1px);
