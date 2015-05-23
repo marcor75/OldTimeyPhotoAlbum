@@ -28,7 +28,7 @@ body{
     height: 100%;
     width:100%;
     font-family:cursive;
-    background: tan url(../img/tileable_wood_texture.dark.png) repeat; /* Background pattern from subtlepatterns.com */
+    background: #4A3604 url(../img/tileable_wood_texture.dark.png) repeat; /* Background pattern from subtlepatterns.com */
     background-attachment: fixed;
 }
 
@@ -126,26 +126,31 @@ footer a {
     transform: rotate(-2deg);
 }
 
-optgroup{
+optgroup {
     -webkit-appearance: none;
-    font-family: "Indie Flower", cursive; //doesn't work in Chrome for some reason
+    font-family: "Indie Flower","Segoe Print", cursive;// or try "Sergoe Print" alternatively; 
+  //font-family: "Indie Flower", cursive; doesn't work in webkit for some reason
     font-weight:bold;
+    font-size: 1em;
  }
  #places{
     position:absolute;
-    top: -35px;
-    right: 220px;
-    width: 190px;
-    height: 50px;
+    top: -30px;
+    right: 250px;
+    width: 150px;
+    height: 36px;
+    transform: rotate(-3deg);
     border:none;
+    border-radius: 25%;
     outline:none; /* removes focus ring from Webkit */
     padding-left:5px; 
-    background: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
     font-family: "Indie Flower", cursive;
     font-size:1em;
     font-weight:bold;
+    background-color: rgba(131, 131, 131, 0.1);
+    box-shadow: 0 0 15px rgba(131, 131, 131, 0.2);
 }
 //style dropdown for FF
 #places option,
@@ -154,7 +159,7 @@ optgroup{
     font-family: "Indie Flower", cursive;
     font-size:1em;
     font-weight:bold;
-}
+ }
 #places:hover{
     cursor: pointer;
 }
@@ -166,7 +171,6 @@ optgroup{
     width: 150px;
     height: 200px;
     position:absolute;
-   // border:1px dotted red;
  }
 
 /*thumbnails */

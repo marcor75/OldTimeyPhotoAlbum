@@ -38,7 +38,6 @@ basic perspective setup
 /*****************************************
 page navigation 
 *****************************************/
-
 #nav{
     position: relative;
     top:-360px;
@@ -156,7 +155,6 @@ from ://forum.jquery.com/topic/raise-z-index */
 /*****************************************
 page turn
 *****************************************/
-
 .page, .front, .back, .turned{
     /*defines the general "style" for page transform transitions */
     -webkit-transition:-webkit-transform 1s ease-in-out;
@@ -195,7 +193,6 @@ display images and captions on the two open pages
     -o-transform: rotate(4deg) translateZ(2px);
     transform: rotate(4deg) translateZ(2px);
 }
-
 .thumb2 {
     -webkit-transform: rotate(-1deg) translateZ(2px);
     -moz-transform: rotate(-1deg) translateZ(2px);
@@ -203,7 +200,6 @@ display images and captions on the two open pages
     -o-transform: rotate(-1deg) translateZ(2px);
     transform: rotate(-1deg)translateZ(2px);
  }
-
 .thumb4,.thumb6{
     -webkit-transform: rotate(3deg) translateZ(2px);
     -moz-transform: rotate(3deg) translateZ(2px);

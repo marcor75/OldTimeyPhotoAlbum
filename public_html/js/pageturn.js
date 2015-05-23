@@ -35,20 +35,6 @@ var navArrowsFirstLast = function() {
     }; 
 };
 
-/*//on PAGE CLICK-navigation. Not reliable in firefox; workaround w/ larger nav arrows 
- $(".page").on("click", "div", function(){    
-    // check if page has been turned over
-    if ($(this).parent(".page").hasClass("turned")) {
-        // turn page back to original position
-        turnLeftPage();
-    // else page IS in original position on right 
-    } else {
-        // turn over to the left
-        turnRightPage();
-    };
-});  
- */
-
 // turns over right page    
 function turnRightPage(callback) {
     var $page = $(".turned").prev(".page:not(.last)");
@@ -119,16 +105,16 @@ $("#places").on("change", function () {
     
     if ( selection !== "Where to go..."){
         switch (selection) {
-            case '1 Abstract':
             case '1 Ubud':
-            case '1 South':
+            case '1 Denpasar':
+            case '1 Menjangan':
             case '1 Gilis':
                 var $page = $("#p1");
                 break;
             case '2 Colombo':
-            case '2 Anarathapura':
+            case '2 Galle':
             case '2 Kandy':
-            case '2 Cities':
+            case '2 Anuradhapura':
                 var $page = $("#p2");
                 break;
             case '3 Taipei':

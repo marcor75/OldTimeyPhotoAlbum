@@ -22,7 +22,7 @@ function getImageOrientation () {
         } else {
             console.log("portrait");
             $(".current").addClass("portrait");
-            $("#caption").css({"margin-left":"-550px", "margin-top": "115px"});
+            $("#caption").css({"margin-left":"-35%", "margin-top": "115px"});
         } 
 }; 
 
@@ -30,9 +30,8 @@ function getImageOrientation () {
 $(".page").delegate("img", "click", function(event) {
     event.preventDefault();
     event.stopPropagation();
-   //for some reason return false; doesn't work here
-    
-  // wrap setCaption-call into a callback fct to ensure .load has finished before firing setCaption
+       
+  // wrap setCaption-call into a callback fct. to ensure .load has finished before firing setCaption
     var url = $(this).attr("id");
     $("#lightboximg").load(url+".html", function(){
         setCaption();

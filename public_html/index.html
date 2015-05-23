@@ -3,7 +3,7 @@
     <head>
         <title>Old-Timey Photo Album</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
         <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8" defer></script>
         <script src="js/lightbox.js" type="text/javascript" charset="utf-8" defer></script>
         <script src="js/pageturn.js" type="text/javascript" charset="utf-8" defer></script>
@@ -24,14 +24,14 @@
                 <hr> <br>
             <p> PLEASE NOTE:<br>
                 <br>
-                So far only the first photo on page 1 ("Abstract") and the last photo on page 2 ("Cities") open related galleries.
+                So far only the first photo on page 1 ("Ubud") and the last photo on page 2 ("Anuradhapura") open the related galleries.
                 The load-method for the other photos is not fully implemented yet.<br><br>
                 
-                Old-Timey Photo Album is best viewed in Chrome or Opera. In Firefox transforms are not smooth for some reason.
+                Old-Timey Photo Album is best viewed in Chrome or Opera. Only works in safe mode in Firefox since update to v.37.
                 Does not work in IE. Not tested in Safari. <br><br>
                 
                 Background is by courtesy of http://subtlepatterns.com <br>
-                Placeholder images are courtesy of http://lorempixel.com <br>
+               
             </p>
             </div>
         </header>
@@ -41,17 +41,17 @@
                     <!-- bookmark --> 
                     <select id="places" name="places">
                         <option value="Where_to_go" selected>Where to go... &raquo;</option>
-                        <optgroup class="og" label="Bali">
-                        <option>1 Abstract</option>
+                        <optgroup label="Bali">
                         <option>1 Ubud</option>
-                        <option>1 South</option>
+                        <option>1 Denpasar</option>
+                        <option>1 Menjangan</option>
                         <option>1 Gilis</option>
                         </optgroup>
                         <optgroup label="Sri Lanka">
                         <option>2 Colombo</option>
-                        <option>2 Anarathapura</option>
+                        <option>2 Galle</option>
                         <option>2 Kandy</option>
-                        <option>2 Cities</option>
+                        <option>2 Anuradhapura</option>
                         </optgroup>
                         <optgroup label="Taiwan">
                         <option>3 Taipei</option>
@@ -121,7 +121,7 @@
                             <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Yangshuo</span> 
                             <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Lijiang</span> 
                             <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Hangzhou</span> 
-                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">Wuyishan</span>
+                            <a class="thumb8" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb8_capt">Wuyishan</span>
                         </div>
                     </div>    
                     <div id="right5" class="page right">
@@ -135,7 +135,7 @@
                             <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Hanoi</span> 
                             <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Hoi An</span> 
                             <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Saigon</span> 
-                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">NaThrang</span>
+                            <a class="thumb8" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb8_capt">NaThrang</span>
                         </div>
                     </div>
                     <div id="right4" class="page right">
@@ -149,7 +149,7 @@
                             <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Siem Reap</span> 
                             <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Sihanouville</span> 
                             <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Phnom Phen</span> 
-                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">Cities</span>
+                            <a class="thumb8" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb8_capt">Cities</span>
                         </div>
                     </div>
                     <div id="right3" class="page right">
@@ -163,7 +163,7 @@
                             <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Koh Chang</span> 
                             <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Chiang Rai</span> 
                             <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Bangkok</span> 
-                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">Sukothai</span>
+                            <a class="thumb8" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb8_capt">Sukothai</span>
                         </div>
                     </div>
                     <div id="right2" class="page right">
@@ -177,7 +177,7 @@
                             <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Hong Kong</span> 
                             <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">1.July Protests</span> 
                             <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Lantau</span> 
-                            <a class="thumb8" href="#"><img src="img/image6.jpg" alt="#"/></a><span class="thumb8_capt">Shek O</span>
+                            <a class="thumb8" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb8_capt">Shek O</span>
                         </div>
                     </div>
                     <div id="right1" class="page right open">
@@ -189,16 +189,16 @@
                         </div>
                         <div id="p2" class="front">2 <span>Sri Lanka</span>
                             <a class="thumb5" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb5_capt">Colombo</span> 
-                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Anarathapura</span> 
+                            <a class="thumb6" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb6_capt">Galle</span> 
                             <a class="thumb7" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb7_capt">Kandy</span> 
-                            <a class="thumb8" href="#"><img id="cities" src="img/image6.jpg" alt="Cities"/></a><span class="thumb8_capt">Cities</span> 
+                            <a class="thumb8" href="#"><img id="anuradhapura" src="img/Anuradhapura1.jpg" alt="White Stupa in Anuradhapura, Sri Lanka"/></a><span class="thumb8_capt">Anuradhapura</span> 
                         </div>
                     </div>
                     <div class="page first turned">
                         <div id="p1" class="back">1 <span>Bali</span>
-                            <a class="thumb1" href="#"><img id="abstract" src="img/thumb.jpg" alt="Abstract in Blue"/></a><span class="thumb1_capt">Abstract</span>
-                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb2_capt">Ubud</span>
-                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb3_capt">South</span>
+                            <a class="thumb1" href="#"><img id="ubud" src="img/Ubud3.jpg" alt="Ubud Palace, Bali"/></a><span class="thumb1_capt">Ubud</span>
+                            <a class="thumb2" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb2_capt">Denpasar</span>
+                            <a class="thumb3" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb3_capt">Menjangan</span>
                             <a class="thumb4" href="#"><img src="img/thumb.jpg" alt="#"/></a><span class="thumb4_capt">Gilis</span>
                         </div>
                     </div>

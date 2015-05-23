@@ -52,7 +52,7 @@ overlay / images / navigation
 }
 
 #caption {
-    font-family: "Indie Flower", cursive;
+    font-family: "Indie Flower","Segoe Print", cursive;
     color:white; 
     position: absolute;
     width: 100%;
